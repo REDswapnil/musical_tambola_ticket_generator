@@ -28,6 +28,14 @@ python main.py 20
 
 This will generate 20 tickets.
 
+## Adding / Removing songs
+
+You can change the 90 songs list [here](/songs.py)
+
+**NOTE:** The list should contain 90 songs since that is a requirement for a tambola ticket.
+
+There are no code safeguards if you don't fulfill this requirement.
+
 ## Downloading / Printing tickets
 
 After running the app, you will have to open the web browser and type in the following in the address bar:
@@ -43,5 +51,9 @@ Following considerations are used to have print-friendly tickets:
 2. Only 2 tickets will be printed in a page to avoid breaking tickets while printing
 
 If you don't want the background color, you can simple use the browser print console and uncheck the background color option, no code changes needed.
+
+## Demo Tickets
+
+![Demo Tickets](static/demo.png)
 
 **GLHF !**
