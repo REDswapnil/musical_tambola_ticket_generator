@@ -38,11 +38,11 @@ There are no code safeguards if you don't fulfill this requirement.
 
 ## Downloading / Printing tickets
 
-After running the app, you will have to open the web browser and type in the following in the address bar:
+After running the app, you will have to open the web browser and type the following in the address bar:
 
 `https://localhost:5000`
 
-This will display all tickets in the browser.
+This will display all the tickets in the browser.
 
 To print the tickets, simply use the browser print console (ctrl + p) to print the tickets as a PDF file.
 

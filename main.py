@@ -25,7 +25,6 @@ def generate_single_ticket():
             else:
                 row[i] = ""
 
-        random.shuffle(row)
         ticket.append(row)
 
     return ticket
