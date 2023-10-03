@@ -18,6 +18,8 @@ python main.py
 
 This will generate 80 tickets by default.
 
+---
+
 **Specify the number of tickets as an argument**
 
 ```angular2html
@@ -34,7 +36,7 @@ After running the app, you will have to open the web browser and type in the fol
 
 This will display all tickets in the browser.
 
-To print the tickets, simply use the browser print console to print the tickets as a PDF file.
+To print the tickets, simply use the browser print console (ctrl + p) to print the tickets as a PDF file.
 
 Following considerations are used to have print-friendly tickets:
 1. Tickets will be printed in landscape
