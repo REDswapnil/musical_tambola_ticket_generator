@@ -1,7 +1,6 @@
 import collections
 import random
 import sys
-
 from songs import SONG_LIST
 from flask import Flask, render_template
 

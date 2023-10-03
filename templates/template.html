@@ -105,7 +105,7 @@
             {% for row in ticket %}
             <tr>
                 {% for cell in row %}
-                <td class="table-data">{{ cell }}</td>
+                <td class="table-data {% if not cell %} bg-grey {% endif %}">{{ cell }}</td>
                 {% endfor %}
             </tr>
             {% endfor %}
@@ -114,7 +114,6 @@
         {% if loop.index0 is even %}
             <div class="page-break"></div>
         {% endif %}
-
         {% endfor %}
     </div>
 </body>
