@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambola Ticket</title>
+    <style>
+        @font-face {
+            font-family: Geogrotesque-md;
+            src: url("../static/fonts/Geogrotesque-Md.otf");
+        }
+
+        @media print{
+            @page {size: landscape}
+        }
+
+        .ticket-header {
+            border: 1px solid black;
+            margin: 0;
+            border-bottom: 0;
+            padding: 5px;
+            display: flex;
+        }
+
+        .ticket-header-element {
+            flex-grow: 1;
+        }
+
+        .page-break {
+            break-after:page;
+        }
+
+        body {
+            font-family: Geogrotesque-md;
+            display: flex;
+            justify-content: center;
+        }
+
+        .ticket {
+            display: flex;
+            justify-content: center;
+            padding: 5px;
+            margin: 5px;
+            /*width: 21cm;*/
+            flex-direction: column;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px;
+            text-align: center;
+            width: 11.11%;
+        }
+
+        .background-pastel-yellow {
+            background-color: #FFFFB5;
+        }
+
+        .background-pastel-blue {
+            background-color: #A2E1DB;
+        }
+
+        .background-pastel-green {
+            background-color: #B6CFB6;
+        }
+
+        .background-pastel-orange {
+            background-color: #FFD8BE;
+        }
+
+        .background-pastel-pink {
+            background-color: #FEE1E8;
+        }
+
+        .background-pastel-red {
+            background-color: #FFAEA5;
+        }
+
+        .wrapper {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ticket">
+        {% for ticket in tickets %}
+        <div class=" wrapper {{ [
+            "background-pastel-yellow",
+            "background-pastel-blue",
+            "background-pastel-green",
+            "background-pastel-orange",
+            "background-pastel-pink",
+            "background-pastel-red",
+            ] | random }}">
+            <div class="ticket-header">
+                <p class="ticket-header-element">Ticket Number - {{ range(1, 999999) | random }}</p>
+                <p>Musical Tambola</p>
+            </div>
+            <table class="ticket-table">
+            {% for row in ticket %}
+            <tr>
+                {% for cell in row %}
+                <td class="table-data">{{ cell }}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        {% if loop.index0 is even %}
+            <div class="page-break"></div>
+        {% endif %}
+
+        {% endfor %}
+    </div>
+</body>
+</html>
