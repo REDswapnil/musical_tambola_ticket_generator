@@ -26,7 +26,7 @@ SONG_LIST = [
     "Bidi Jalai Le",
     "Mera Juta Hai Japani",
     "Hothon Se Chulo Tum",
-    "Pyaar Hua Ekraar Hua",
+    "Dilbar Mere Kab Tak Mujhe",
     "Sajna Hai Mujhe Sajna Ke Liye",
     "Ek Ladki Bheegi Bhaagi Si",
     "Kehta Hai Joker Saara Zamaana",

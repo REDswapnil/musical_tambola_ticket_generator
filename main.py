@@ -56,6 +56,20 @@ if __name__ == "__main__":
     COLS = 9
     ROWS = 3
 
+    if len(SONG_LIST) < 90 or len(set(SONG_LIST)) < 90:
+        print('Song list should be equal to 90. Please add 90 UNIQUE songs to the list to continue...')
+        sys.exit()
+    elif len(SONG_LIST) > 90:
+        if len(set(SONG_LIST)) >= 90:
+            SONG_LIST = list(set(SONG_LIST))
+            print('WARNING: Song list is of more than 90 songs. Please note that only first 90 will be picked...')
+        else:
+            print('Song list does not have enough unique songs...')
+            sys.exit()
+    elif len(SONG_LIST) == 90 and len(set(SONG_LIST)) < 90:
+        print('Song list does not have unique songs...')
+        sys.exit()
+
     SONG_BRACKETS = [
         SONG_LIST[0: 10],
         SONG_LIST[10: 20],
@@ -68,6 +82,12 @@ if __name__ == "__main__":
         SONG_LIST[80: 90]
     ]
 
+    if not all(len(set(bracket)) >= 3 for bracket in SONG_BRACKETS):
+        print('The 90 song list is broken down into 9 brackets of 10 songs each')
+        print('It is required that the length of unique songs in individual brackets should be atleast 3')
+        print('Please make sure the above requirement is fulfilled...')
+        sys.exit()
+
     if len(sys.argv) <= 1:
         print(f'Running app with number of tickets to generate :: {NUMBER_OF_TICKETS}')
         app.run()
@@ -77,7 +97,6 @@ if __name__ == "__main__":
         app.run()
     else:
         print('Invalid command line arguments')
-        help = f'USE :: python main.py NUMBER_OF_TICKETS'
-        print(help)
+        print(f'USE :: python main.py NUMBER_OF_TICKETS')
 
 
